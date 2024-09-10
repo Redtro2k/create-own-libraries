@@ -1,0 +1,69 @@
+{
+  "version": "4.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@redtro/redtro-demo",
+  "author": "Darwin Llacuna",
+  "module": "dist/redtro-demo.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/redtro-demo.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/redtro-demo.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.1.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "husky": "^9.1.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "size-limit": "^11.1.5",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.7.0",
+    "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "@rollup/plugin-replace": "^5.0.7"
+  },
+  "description": "Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  }
+}
